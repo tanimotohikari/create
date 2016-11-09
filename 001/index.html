@@ -1,0 +1,77 @@
+<html ng-app='App'>
+<head>
+<meta lang='ja' charset='UTF-8'>
+<meta name='description' content=''>
+<meta name='author' content=''>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='shortcut icon' href=''>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type='text/javascript' src='js/TodoController.js'></script>
+  <script type='text/javascript' src='js/MemoController.js'></script>
+  <script type='text/javascript' src='js/script.js'></script>
+  <script type='text/javascript' src='js/animate.js'></script>
+  <link rel='stylesheet' href='css/common.css'>
+	<title>Applications</title>
+  <style>
+  </style>
+</head>
+<body class='prelude'>
+<div class='body-wrapper'>
+  <section class='layout-section app-list clearfix'>
+    <ul class='list clearfix'>
+      <li class='title flamingo start-up-todo'>TODO</li>
+      <li class='title layout-side flamingo start-up-memo'>MEMO</li>
+    </ul>
+  </section>
+  <section class='app todo' ng-controller='TodoController as vm'>
+    <div>
+      <form ng-submit='vm.create()'>
+        <input type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
+        <input type='submit' value='新規作成'><br>
+        <input type='button' ng-click='vm.archive()' value='完了したToDoをアーカイブ'>
+      </form>
+      <form>
+        <input type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
+      </form>
+      <h2>Todo</h2>
+      <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
+        <li>
+          <input type='checkbox' ng-model='todo.done'>
+          <span ng-class="{'done': todo.done }">{{todo.title}}</span><span>{{todo.time}}</span>
+        </li>
+      </ul>
+      <h2>Complete</h2>
+      <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
+        <li>
+          <input type='checkbox' ng-model='todo.done'>
+          <span ng-class="{'done': todo.done }">{{complete.title}}</span><span>{{complete.time}}</span>
+        </li>
+      </ul>
+    </div>
+    <p class="btn-back">AppListへ戻る</p>
+  </section>
+  <section class='app memo' ng-controller='MemoController as vm'>
+    <div>
+      <form>
+        <input type='text' ng-model='vm.textTitle' placeholder='memoのtitleを入力'><br>
+        <textarea ng-model='vm.textContents'>memoの内容を入力</textarea><br>
+        <input type='submit' ng-click='vm.createText()' value='Memoを作成'>
+      </form>
+      <form>
+        <input type='text' ng-model='vm.memoTitle' placeholder='Memoを検索'>
+      </form>
+      <h2>MemoList</h2>
+      <ul type='text' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
+        <li>
+          <p>Time:{{memo.time}}</p>
+          <p>Title:{{memo.title}}</p>
+          <p>Contents：{{memo.contents}}</p>
+        </li>
+      </ul>
+    </div>
+    <p class="btn-back">AppListへ戻る</p>
+  </section> 
+</div>
+</body>
+</html>
