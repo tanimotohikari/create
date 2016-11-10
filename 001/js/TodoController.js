@@ -25,23 +25,15 @@ function TodoController() {
     if (self.newTodo) {
       self.todos.push({title: self.newTodo, done: false, time: nowTime});
       var jsonTodoData =[JSON.stringify(self.todos)];
-      //var jsonTodoData = self.todos;
       localStorage.setItem("todos", jsonTodoData);
-      console.log(localStorage);
       self.newTodo = '';
     }
   };
 
-  console.log(localStorage);
   function showList() {
     var todos = localStorage.getItem('todos');
     if(todos) {
       todos = JSON.parse(todos);
-      console.log(todos);
-      console.log(todos.length);
-      console.log(todos[0].title);
-      console.log(todos[0].done);
-      console.log(todos[0].time);
       for(var i=0, len=todos.length; i<len; i++) {
         self.todos.push({title: todos[i].title, done: todos[i].done, time: todos[i].time});
       }
@@ -52,31 +44,7 @@ function TodoController() {
 
   showList();
 
-
-
-  // console.log(localStorage);
-  // function showList() {
-  //   var list = $("#list");
-  //   // ローカルストレージに保存された値todosを要素に追加する
-  //   value = localStorage.getItem('todos');
-  //   console.log(value.length);
-  //   console.log(value);
-  //   JSON.parse(value);
-  //   console.log(value);
-  //   console.log(value.length);
-  //   for(var i=0, len=value.length; i<len; i++) {
-  //     key = localStorage.key(i);
-  //     if(key == 'todos'){
-  //       console.log(value[1]);
-  //       console.log(value[2]);
-  //     }
-  //   }
-    
-  // }
-
-  // showList();
-
-  self.archive = function () {
+  self.archive = function() {
     var currentTodo = self.todos;
     self.todos = [];
     angular.forEach(currentTodo, function (todo) {
@@ -86,6 +54,12 @@ function TodoController() {
         self.completions.push(todo);
       }
     });
+  };
+
+
+  self.check = function(done) {
+    console.log(done);
+    alert(done);
   };
 
   

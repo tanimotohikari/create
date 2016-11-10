@@ -5,12 +5,12 @@
 <meta name='author' content=''>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='shortcut icon' href=''>
-	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script type='text/javascript' src='js/TodoController.js'></script>
-  <script type='text/javascript' src='js/MemoController.js'></script>
-  <script type='text/javascript' src='js/script.js'></script>
-  <script type='text/javascript' src='js/animate.js'></script>
+	<script src='node_modules/angular/angular.min.js'></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src='js/TodoController.js'></script>
+  <script src='js/MemoController.js'></script>
+  <script src='js/script.js'></script>
+  <script src='js/animate.js'></script>
   <link rel='stylesheet' href='css/common.css'>
 	<title>Applications</title>
   <style>
@@ -37,8 +37,8 @@
       <h2>Todo</h2>
       <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
         <li>
-          <input type='checkbox' ng-model='todo.done'>
-          <span ng-class="{'done': todo.done }">{{todo.title}}</span><span>{{todo.time}}</span>
+          <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
+          <span ng-class="{'done': todo.done }" class='a'>{{todo.title}}</span><span>{{todo.time}}</span>
         </li>
       </ul>
       <h2>Complete</h2>
