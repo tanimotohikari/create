@@ -2,7 +2,7 @@ angular.module('App', [])
 .controller('TodoController', TodoController)
 .controller('MemoController',MemoController);
 
-$(window).load(function(){
+$(window).on('load', function(){
   $('.body-wrapper').fadeIn();
 
   $('.start-up-todo').on('click', function() {
