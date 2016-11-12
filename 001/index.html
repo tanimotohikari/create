@@ -37,7 +37,7 @@
         <li>
           <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
           <span ng-class="{'done': todo.done }"><span>{{todo.time}}</span><span>{{todo.title}}</span></span>
-          <button ng-click='vm.delete(todo);'>削除</button>
+          <button ng-click='vm.delete(todo.id);'>削除</button>
         </li>
       </ul>
       <h2>Complete</h2>

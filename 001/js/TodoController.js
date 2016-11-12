@@ -3,6 +3,7 @@ function TodoController() {
 
   self.todos = [];
   self.completions = [];
+  self.deleted = [];
   index = 0;
 
   //新しいtodoの追加
@@ -57,15 +58,9 @@ function TodoController() {
 
   //todoの削除ボタン
   self.delete = function(todo) {
-    var index;
-    for(var i=0, len=self.todos.length; i<len; i++) {
-      if(todo.id == self.todos[i].id) {
-        index = i;
-       // break;
-      }
-      if(index) {
-        self.todos.splice(index, 1);
-      }
-    }
+    console.log(todo);
+    var index = todo;
+    console.log(self.todos[index]);
+    self.todos.splice(todo, 1);
   }
 }
