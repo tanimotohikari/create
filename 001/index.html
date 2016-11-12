@@ -28,8 +28,6 @@
     <div>
       <form ng-submit='vm.create()'>
         <input type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
-        <input type='submit' value='新規作成'><br>
-        <input type='button' ng-click='vm.archive()' value='完了したToDoをアーカイブ'>
       </form>
       <form>
         <input type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
@@ -38,13 +36,14 @@
       <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
         <li>
           <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
-          <span ng-class="{'done': todo.done }"><span>{{todo.title}}</span><span>{{todo.time}}</span></span>
+          <span ng-class="{'done': todo.done }"><span>{{todo.time}}</span><span>{{todo.title}}</span></span>
+          <button ng-click='vm.delete(todo);'>削除</button>
         </li>
       </ul>
       <h2>Complete</h2>
       <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
         <li>
-          <span ng-class="{'done': todo.done }"><span>{{complete.title}}</span><span>{{complete.time}}</span></span>
+          <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
         </li>
       </ul>
     </div>
