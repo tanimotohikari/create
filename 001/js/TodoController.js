@@ -4,13 +4,6 @@ function TodoController() {
   self.todos = [];
   self.completions = [];
 
-
-  // if(localStorage.getItem('todos')) {
-  //   value = localStorage.getItem('todos');
-  //   JSON.parse(value);
-  //   self.todos.push({title: self.newTodo, done: false, time: nowTime});
-  // }
-
   self.create = function() {
     var now = new Date();
     var year = now.getFullYear();
@@ -20,12 +13,12 @@ function TodoController() {
     var min = now.getMinutes();
     var sec = now.getSeconds();
 
-    var nowTime = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
+    var nowTime = year + '年' + mon + '月' + day + '日' + hour + '時'+ min + '分' + sec + '秒'; 
 
     if (self.newTodo) {
       self.todos.push({title: self.newTodo, done: false, time: nowTime});
       var jsonTodoData =[JSON.stringify(self.todos)];
-      localStorage.setItem("todos", jsonTodoData);
+      localStorage.setItem('todos', jsonTodoData);
       self.newTodo = '';
     }
   };
@@ -57,10 +50,16 @@ function TodoController() {
   };
 
 
-  self.check = function(done) {
-    console.log(done);
-    alert(done);
-  };
+  // self.check = function(done) {
+  //   console.log(done);
+  //   currentTodo = self.todos;
+  //   self.todos = [];
+  //   angular.forEach(currentTodo, function(todo) {
+  //     self.completions.push();
+  //     var jsonTodoData =[JSON.stringify(self.completions)];
+  //     localStorage.setItem('complete', jsonTodoData);
+  //   });
+  // };
 
   
 }

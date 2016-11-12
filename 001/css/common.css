@@ -76,6 +76,10 @@ table {
 .btn-back {
   cursor: pointer; }
 
+.done {
+  text-decoration: line-through;
+  color: grey; }
+
 .layout-section {
   margin: 30px 0; }
 

@@ -38,14 +38,13 @@
       <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
         <li>
           <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
-          <span ng-class="{'done': todo.done }" class='a'>{{todo.title}}</span><span>{{todo.time}}</span>
+          <span ng-class="{'done': todo.done }"><span>{{todo.title}}</span><span>{{todo.time}}</span></span>
         </li>
       </ul>
       <h2>Complete</h2>
       <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
         <li>
-          <input type='checkbox' ng-model='todo.done'>
-          <span ng-class="{'done': todo.done }">{{complete.title}}</span><span>{{complete.time}}</span>
+          <span ng-class="{'done': todo.done }"><span>{{complete.title}}</span><span>{{complete.time}}</span></span>
         </li>
       </ul>
     </div>
