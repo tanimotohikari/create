@@ -8,6 +8,7 @@
 	<script src='node_modules/angular/angular.min.js'></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/underscore/underscore-min.js"></script>
+<!--   <script src="node_modules/angular-ui-sortable/dist/sortable.min.js"></script> -->
   <script src='js/TodoController.js'></script>
   <script src='js/MemoController.js'></script>
   <script src='js/script.js'></script>
@@ -33,7 +34,7 @@
       <form>
         <input type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
       </form>
-      <h2>Todo</h2>
+      <h2>Todo<span>{{vm.todos.length}}</span></h2>
       <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
         <li>
           <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
@@ -41,7 +42,7 @@
           <button ng-click='vm.delete(todo.id);'>削除</button>
         </li>
       </ul>
-      <h2>Complete</h2>
+      <h2>Complete<span>{{vm.completions.length}}</span></h2>
       <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
         <li>
           <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
