@@ -67,5 +67,7 @@ function TodoController() {
       }
     }
     self.todos = deleted;
+    var jsonTodoData =[JSON.stringify(self.todos)];
+    localStorage.setItem('todos', jsonTodoData);
   }
 }
