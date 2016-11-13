@@ -58,9 +58,14 @@ function TodoController() {
 
   //todoの削除ボタン
   self.delete = function(todo) {
-    console.log(todo);
     var index = todo;
-    console.log(self.todos[index]);
-    self.todos.splice(todo, 1);
+    var deleted = [];
+    console.log(index);
+    for(var i=0, len=self.todos.length; i<len; i++) {
+      if(index !== self.todos[i].id) {
+        deleted.push({id: self.todos[i].id, title: self.todos[i].title, done: self.todos[i].done, time: self.todos[i].time});
+      }
+    }
+    self.todos = deleted;
   }
 }
