@@ -6,7 +6,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel='shortcut icon' href=''>
 	<script src='node_modules/angular/angular.min.js'></script>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src='node_modules/jquery/dist/jquery.min.js'></script>
   <!-- <script src="node_modules/underscore/underscore-min.js"></script> -->
   <!-- <script src="node_modules/angular-ui-sortable/dist/sortable.min.js"></script> -->
   <script src='js/TodoController.js'></script>
@@ -15,42 +15,52 @@
   <script src='js/script.js'></script>
   <script src='js/animate.js'></script>
   <link rel='stylesheet' href='css/common.css'>
+  <link rel='stylesheet' href='node_modules/bulma/css/bulma.css'>
 	<title>Applications</title>
   <style>
   </style>
 </head>
-<body class='prelude'>
-<div class='body-wrapper' ng-controller='ClickController as click'>
-  <section class='layout-section app-list clearfix'>
-    <ul class='list clearfix'>
-      <li class='title flamingo start-up-todo' ng-click='click.startUpTodo()'>TODO</li>
-      <li class='title layout-side flamingo start-up-memo' ng-click='click.startUpMemo()'>MEMO</li>
+<body>
+<div class='body-wrapper hero-body' ng-controller='ClickController as click'>
+  <section class='layout-section app-list clearfix container has-text-centered'>
+    <ul class='content list clearfix'>
+      <li class='list-content size300 start-up-todo' ng-click='click.startUpTodo()'>TODO</li>
+      <li class='list-content size300 layout-side　start-up-memo' ng-click='click.startUpMemo()'>MEMO</li>
+      <li class='list-content size300 start-up-memo' ng-click='click.startUpMemo()'>MEMO</li>
     </ul>
   </section>
   <section class='app todo' ng-controller='TodoController as vm'>
+  <div class='level'>
     <div>
       <form ng-submit='vm.create()'>
-        <input type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
+        <input class='input' type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
       </form>
       <form>
-        <input type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
+        <input class='input' type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
       </form>
-      <h2>Todo<span>{{vm.todos.length}}</span></h2>
-      <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
-        <li>
-          <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
-          <span ng-class="{'done': todo.done }"><span>{{todo.time}}</span><span>{{todo.title}}</span></span>
-          <button ng-click='vm.delete(todo.id);'>削除</button>
+      <ul class='list content clearfix'>
+        <li class='list-content size480'>
+          <h2 class='level-item'><span class='title is-4'>Todo</span><span class='title is-4'>{{vm.todos.length}}</span></h2>
+          <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
+            <li>
+              <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
+              <span ng-class="{'done': todo.done }"><span>{{todo.time}}</span><span>{{todo.title}}</span></span>
+              <button class='button is-primary' ng-click='vm.delete(todo.id);'>削除</button>
+            </li>
+          </ul>
+        </li>
+        <li class='list-content size480'>
+          <h2><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span></h2>
+          <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
+            <li>
+              <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
+            </li>
+          </ul>
         </li>
       </ul>
-      <h2>Complete<span>{{vm.completions.length}}</span></h2>
-      <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
-        <li>
-          <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
-        </li>
-      </ul>
+      <p class='btn-back' ng-click='click.back()'>AppListへ戻る</p>
     </div>
-    <p class="btn-back" ng-click='click.back()'>AppListへ戻る</p>
+  </div>
   </section>
   <section class='app memo' ng-controller='MemoController as vm'>
     <div>
