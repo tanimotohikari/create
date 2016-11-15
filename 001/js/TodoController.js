@@ -33,18 +33,23 @@ function TodoController() {
     var completions = localStorage.getItem('completions');
     if(todos || completions) {
       todos = JSON.parse(todos);
-      completions = JSON.parse(completions);
       for(var i=0, len=todos.length; i<len; i++) {
         self.todos.push({id: todos[i].id, title: todos[i].title, done: todos[i].done, time: todos[i].time});
       }
+    } else {
+      todos = [];
+    }
+
+    index = todos.length;
+
+    if(completions) {
+      completions = JSON.parse(completions);
       for(var i=0, len=completions.length; i<len; i++) {
         self.completions.push({id: todos[i].id, title: todos[i].title, done: todos[i].done, time: todos[i].time});
       }
     } else {
-      todos = [];
       completions = [];
     }
-    index = todos.length;
   }
 
   showList();

@@ -7,10 +7,11 @@
 <link rel='shortcut icon' href=''>
 	<script src='node_modules/angular/angular.min.js'></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/underscore/underscore-min.js"></script>
-<!--   <script src="node_modules/angular-ui-sortable/dist/sortable.min.js"></script> -->
+  <!-- <script src="node_modules/underscore/underscore-min.js"></script> -->
+  <!-- <script src="node_modules/angular-ui-sortable/dist/sortable.min.js"></script> -->
   <script src='js/TodoController.js'></script>
   <script src='js/MemoController.js'></script>
+  <script src='js/ClickController.js'></script>
   <script src='js/script.js'></script>
   <script src='js/animate.js'></script>
   <link rel='stylesheet' href='css/common.css'>
@@ -19,11 +20,11 @@
   </style>
 </head>
 <body class='prelude'>
-<div class='body-wrapper'>
+<div class='body-wrapper' ng-controller='ClickController as click'>
   <section class='layout-section app-list clearfix'>
     <ul class='list clearfix'>
-      <li class='title flamingo start-up-todo'>TODO</li>
-      <li class='title layout-side flamingo start-up-memo'>MEMO</li>
+      <li class='title flamingo start-up-todo' ng-click='click.startUpTodo()'>TODO</li>
+      <li class='title layout-side flamingo start-up-memo' ng-click='click.startUpMemo()'>MEMO</li>
     </ul>
   </section>
   <section class='app todo' ng-controller='TodoController as vm'>
@@ -49,7 +50,7 @@
         </li>
       </ul>
     </div>
-    <p class="btn-back">AppListへ戻る</p>
+    <p class="btn-back" ng-click='click.back()'>AppListへ戻る</p>
   </section>
   <section class='app memo' ng-controller='MemoController as vm'>
     <div>
@@ -70,7 +71,7 @@
         </li>
       </ul>
     </div>
-    <p class="btn-back">AppListへ戻る</p>
+    <p class="btn-back" ng-click='click.back()'>AppListへ戻る</p>
   </section> 
 </div>
 </body>

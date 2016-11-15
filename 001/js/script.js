@@ -1,23 +1,7 @@
 angular.module('App', [])
+.controller('ClickController', ClickController)
 .controller('TodoController', TodoController)
-.controller('MemoController',MemoController);
-
-$(window).on('load', function(){
+.controller('MemoController',MemoController)
+.run(['$window', function ($window) {
   $('.body-wrapper').fadeIn();
-
-  $('.start-up-todo').on('click', function() {
-    $('.app-list').fadeOut();
-    $('.todo').fadeIn();
-  });
-
-  $('.start-up-memo').on('click', function() {
-    $('.app-list').fadeOut();
-    $('.memo').fadeIn();
-  });
-
-  $('.btn-back').on('click', function() {
-    $('.app').fadeOut();
-    $('.app-list').fadeIn();
-  });
-});
-
+}]);

@@ -51,14 +51,8 @@ table {
   margin: 50px auto;
   display: none; }
 
-.prelude {
-  background-image: -webkit-radial-gradient(51% 96%, #E7E9E4 10%, #D4D6D1 96%);
-  background-image: radial-gradient(51% 96%, #E7E9E4 10%, #D4D6D1 96%); }
-
-.flamingo {
-  background-image: -webkit-radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), -webkit-radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
-  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
-  background-blend-mode: screen; }
+.body-wrapper {
+  position: relative; }
 
 .list .title {
   width: 300px;
@@ -73,12 +67,33 @@ table {
 .app {
   display: none; }
 
+.todo {
+  width: 960px;
+  margin: 0 auto;
+  position: absolute;
+  left: -360px; }
+
+.memo {
+  width: 960px;
+  margin: 0 auto;
+  position: absolute;
+  left: -360px; }
+
 .btn-back {
   cursor: pointer; }
 
 .done {
   text-decoration: line-through;
   color: grey; }
+
+.prelude {
+  background-image: -webkit-radial-gradient(51% 96%, #E7E9E4 10%, #D4D6D1 96%);
+  background-image: radial-gradient(51% 96%, #E7E9E4 10%, #D4D6D1 96%); }
+
+.flamingo {
+  background-image: -webkit-radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), -webkit-radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen; }
 
 .layout-section {
   margin: 30px 0; }
