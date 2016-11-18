@@ -33,7 +33,7 @@
   <div class='level'>
     <div>
       <form ng-submit='vm.create()'>
-        <input class='input' type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
+        <input class='input mb10' type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
       </form>
       <form>
         <input class='input' type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
@@ -41,21 +41,28 @@
       <ul class='list content clearfix'>
         <li class='list-content size480'>
           <h2 class='level-item'><span class='title is-4'>Todo</span><span class='title is-4'>{{vm.todos.length}}</span></h2>
-          <ul id='list' ng-repeat='todo in vm.todos | filter:vm.keyword'>
-            <li>
-              <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
-              <span ng-class="{'done': todo.done }"><span>{{todo.time}}</span><span>{{todo.title}}</span></span>
-              <button class='button is-primary' ng-click='vm.delete(todo.id);'>削除</button>
-            </li>
-          </ul>
+          <div class='scroll-content-wrapper'>
+            <div class='scroll-content'>
+              <ul ng-repeat='todo in vm.todos | filter:vm.keyword'>
+                <li class='list-style'>
+                  <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
+                  <span ng-class="{'done': todo.done }"><span class="size13">{{todo.time}}</span><br><span>{{todo.title}}</span><button class='button is-primary' ng-click='vm.delete(todo.id);'>削除</button></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </li>
         <li class='list-content size480'>
           <h2><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span></h2>
-          <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
-            <li>
-              <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
-            </li>
-          </ul>
+          <div class='scroll-content-wrapper'>
+            <div class='scroll-content'>
+              <ul type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
+                <li class='list-style'>
+                  <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </li>
       </ul>
       <p class='btn-back' ng-click='click.back()'>AppListへ戻る</p>
@@ -63,23 +70,35 @@
   </div>
   </section>
   <section class='app memo' ng-controller='MemoController as vm'>
-    <div>
-      <form>
-        <input type='text' ng-model='vm.textTitle' placeholder='memoのtitleを入力'><br>
-        <textarea ng-model='vm.textContents'>memoの内容を入力</textarea><br>
-        <input type='submit' ng-click='vm.createText()' value='Memoを作成'>
-      </form>
-      <form>
-        <input type='text' ng-model='vm.memoTitle' placeholder='Memoを検索'>
-      </form>
-      <h2>MemoList</h2>
-      <ul type='text' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
-        <li>
-          <p>Time:{{memo.time}}</p>
-          <p>Title:{{memo.title}}</p>
-          <p>Contents：{{memo.contents}}</p>
-        </li>
-      </ul>
+    <div class='level'>
+      <div>
+        <form>
+          <input class='input mb20' type='text' ng-model='vm.memoTitle' placeholder='Memoを検索'>
+        </form>  
+        <ul class='list content clearfix'>
+          <li class='list-content size480'>
+            <form>
+              <input class='input mb10' type='text' ng-model='vm.textTitle' placeholder='memoのtitleを入力'><br>
+              <textarea class='textarea size280' ng-model='vm.textContents' placeholder='memoの内容を入力'>memoの内容を入力</textarea><br>
+            </form>
+            <button class='button is-primary width-max' ng-click='vm.createText()'>Memoを作成</button>
+          </li>
+          <li class='list-content size480'>
+            <h2 class='level-item'><span class='title is-4'>MemoList</span><span class='title is-4'>{{vm.todos.length}}</span></h2>
+            <div class='scroll-content-wrapper'>
+              <div class='scroll-content'>
+                <ul type='text' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
+                  <li>
+                    <p>Time:{{memo.time}}</p>
+                    <p>Title:{{memo.title}}</p>
+                    <p>Contents：{{memo.contents}}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <p class="btn-back" ng-click='click.back()'>AppListへ戻る</p>
   </section> 

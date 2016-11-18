@@ -1,3 +1,15 @@
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb20 {
+	margin-bottom: 20px;
+}
+
+.size13 {
+	font-size: 13px;
+}
+
 .layout-section{
   margin: 30px 0;
 }
@@ -10,7 +22,15 @@
   margin-bottom: 30px;
 }
 
+.width-max {
+	width: 100%;
+}
+
 .content{
+	.size280 {
+		width: 300px;
+		height: 300px;
+	}
 	.size300 {
 		width: 300px;
 		height: 300px;

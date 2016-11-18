@@ -45,7 +45,7 @@ function TodoController() {
     if(completions) {
       completions = JSON.parse(completions);
       for(var i=0, len=completions.length; i<len; i++) {
-        self.completions.push({id: todos[i].id, title: todos[i].title, done: todos[i].done, time: todos[i].time});
+        self.completions.push({id: completions[i].id, title: completions[i].title, done: completions[i].done, time: completions[i].time});
       }
     } else {
       completions = [];
@@ -61,6 +61,8 @@ function TodoController() {
     angular.forEach(currentTodo, function (todo) {
       if (!todo.done) {
         self.todos.push(todo);
+        var jsonTodoData =[JSON.stringify(self.todos)];
+        localStorage.setItem('todos', jsonTodoData);
       } else {
         self.completions.push(todo);
         var jsonTodoData =[JSON.stringify(self.completions)];

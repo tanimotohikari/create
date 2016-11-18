@@ -29,6 +29,9 @@ body {
 ol, ul {
   list-style: none; }
 
+li {
+  list-style-type: none; }
+
 blockquote, q {
   quotes: none; }
 
@@ -63,6 +66,8 @@ table {
   padding: 20px;
   box-sizing: border-box;
   cursor: pointer; }
+  .list .list-content .list-style {
+    text-align: left; }
 
 .app {
   display: none; }
@@ -78,7 +83,15 @@ table {
   width: 960px;
   margin: 0 auto;
   position: absolute;
+  top: 50px;
   left: -360px; }
+
+.scroll-content-wrapper {
+  overflow: hidden;
+  height: 385px; }
+  .scroll-content-wrapper .scroll-content {
+    overflow: scroll;
+    height: 400px; }
 
 .btn-back {
   cursor: pointer; }
@@ -86,6 +99,15 @@ table {
 .done {
   text-decoration: line-through;
   color: grey; }
+
+.mb10 {
+  margin-bottom: 10px; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.size13 {
+  font-size: 13px; }
 
 .layout-section {
   margin: 30px 0; }
@@ -95,6 +117,13 @@ table {
 
 .layout-bottom {
   margin-bottom: 30px; }
+
+.width-max {
+  width: 100%; }
+
+.content .size280 {
+  width: 300px;
+  height: 300px; }
 
 .content .size300 {
   width: 300px;

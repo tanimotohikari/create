@@ -12,6 +12,9 @@
     padding: 20px;
     box-sizing: border-box;
     cursor: pointer;
+    .list-style {
+      text-align: left;
+    }
   }
 }
 
@@ -31,8 +34,18 @@
   width: 960px;
   margin: 0 auto;
   position: absolute;
+  top: 50px;
   left: -360px;
 }
+.scroll-content-wrapper {
+  overflow: hidden;
+  height: 385px;
+  .scroll-content {
+    overflow: scroll;
+    height: 400px;
+  }
+}
+
 
 .btn-back {
   cursor: pointer;
