@@ -1,8 +1,8 @@
-function MemoController () {
+function MemoController() {
   var self = this;
   self.memoList = [];
 
-  self.createText = function () {
+  self.createText = function() {
     var now = new Date();
     var year = now.getFullYear();
     var mon = now.getMonth()+1; //１を足すこと
@@ -13,9 +13,14 @@ function MemoController () {
 
     var nowTime = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
     if(self.textTitle && self.textContents){
-      self.memoList.push({title: self.textTitle, contents: self.textContents, time: nowTime});
+      self.memoList.push({id: 0, title: self.textTitle, contents: self.textContents, time: nowTime});
       self.textTitle = '';
       self.textContents = '';
     }
   };
+
+  self.showDetail = function(memoId) {
+    console.log(memoId);
+    $('.sidein-content').animate({right: 0},200);
+  }
 }

@@ -62,7 +62,7 @@ table {
   height: 300px;
   font-size: 20px;
   float: left;
-  padding-top: 40px;
+  padding-top: 30px;
   box-sizing: border-box;
   cursor: pointer; }
   .list .list-content .list-style {
@@ -71,7 +71,8 @@ table {
     border-left: solid 6px #00b89c;
     border-bottom: solid 1px #00b89c;
     padding-bottom: 5px;
-    padding-left: 10px; }
+    padding-left: 10px;
+    margin-bottom: 15px; }
     .list .list-content .list-title .title {
       display: inline-block;
       margin-right: 10px; }
@@ -95,16 +96,34 @@ table {
 
 .scroll-content-wrapper {
   overflow: hidden;
-  height: 385px; }
+  height: 400px; }
   .scroll-content-wrapper .scroll-content {
     overflow: scroll;
     height: 400px; }
     .scroll-content-wrapper .scroll-content .content-todo, .scroll-content-wrapper .scroll-content .content-complete {
-      margin-left: 0;
-      margin-right: 0; }
+      margin: 0 0 15px 0; }
+    .scroll-content-wrapper .scroll-content .content-memo {
+      margin: 0 0 5px 0; }
 
-.btn-back {
-  cursor: pointer; }
+.sidein-content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .sidein-content .detail {
+    width: 480px;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box; }
+    .sidein-content .detail .title {
+      color: #fff;
+      font-weight: bold;
+      font-size: 26px; }
+
+.btn {
+  cursor: pointer;
+  font-weight: bold; }
 
 .done {
   text-decoration: line-through;
@@ -129,10 +148,10 @@ table {
   margin-bottom: 30px; }
 
 .layout .box-left {
-  padding-left: 20px; }
+  padding-right: 20px; }
 
 .layout .box-right {
-  padding-right: 20px; }
+  padding-left: 20px; }
 
 .width-max {
   width: 100%; }

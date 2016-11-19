@@ -34,7 +34,7 @@ function TodoController() {
     if(todos || completions) {
       todos = JSON.parse(todos);
       for(var i=0, len=todos.length; i<len; i++) {
-        self.todos.push({id: todos[i].id, title: todos[i].title, done: todos[i].done, time: todos[i].time});
+        self.todos.push({id: i, title: todos[i].title, done: todos[i].done, time: todos[i].time});
       }
     } else {
       todos = [];
@@ -72,8 +72,8 @@ function TodoController() {
   };
 
   //todoの削除ボタン
-  self.delete = function(todo) {
-    var index = todo;
+  self.delete = function(todoId) {
+    var index = todoId;
     var deleted = [];
     console.log(index);
     for(var i=0, len=self.todos.length; i<len; i++) {

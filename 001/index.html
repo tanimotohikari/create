@@ -13,14 +13,13 @@
   <script src='js/MemoController.js'></script>
   <script src='js/ClickController.js'></script>
   <script src='js/script.js'></script>
-  <script src='js/animate.js'></script>
   <link rel='stylesheet' href='css/common.css'>
   <link rel='stylesheet' href='node_modules/bulma/css/bulma.css'>
 	<title>Applications</title>
   <style>
   </style>
 </head>
-<body>
+<body ng-controller='MemoController as vm'>
 <div class='body-wrapper hero-body' ng-controller='ClickController as click'>
   <section class='layout-section app-list clearfix container has-text-centered'>
     <ul class='content list clearfix'>
@@ -32,28 +31,29 @@
   <section class='app todo' ng-controller='TodoController as vm'>
   <div class='level'>
     <div>
-      <p class="btn-back mb10" ng-click='click.back()'>AppListへ戻る</p>
+      <p class='mb10 button is-link' ng-click='click.back()'>AppListへ戻る</p>
       <form ng-submit='vm.create()'>
-        <input class='input mb10' type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力'><br>
+        <input class='input mb10' type='text' ng-model='vm.newTodo' placeholder='ToDo名を入力(Enter keyでtodoを作成)'><br>
       </form>
       <form>
-        <input class='input' type='text' ng-model='vm.keyword' placeholder='ToDoを検索'>
+        <input class='input' type='text' ng-model='vm.keyword' placeholder='ToDoを検索(Todo,Completeのリストを検索)'>
       </form>
       <ul class='list content clearfix layout'>
-        <li class='list-content size480 box-right'>
+        <li class='list-content size480 box-left'>
           <h2 class='level-item list-title'><span class='title is-4'>Todo</span><span class='title is-4'>{{vm.todos.length}}</span><span class='title is-5'>items</span></h2>
           <div class='scroll-content-wrapper'>
             <div class='scroll-content'>
               <ul class='content-todo' ng-repeat='todo in vm.todos | filter:vm.keyword'>
                 <li class='list-style'>
                   <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
-                  <span ng-class="{'done': todo.done }"><span class="size13">{{todo.time}}</span><br><span>{{todo.title}}</span><button class='button is-primary' ng-click='vm.delete(todo.id);'>削除</button></span>
+                  <span ng-class="{'done': todo.done }"><span class='size13'>{{todo.time}}</span><br><span>{{todo.title}}</span><br>
+                  <button class='button is-danger btn' ng-click='vm.delete(todo.id);'>削除</button></span>
                 </li>
               </ul>
             </div>
           </div>
         </li>
-        <li class='list-content size480 box-left'>
+        <li class='list-content size480 box-right'>
           <h2 class='level-item list-title'><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span><span class='title is-5'>items</span></h2>
           <div class='scroll-content-wrapper'>
             <div class='scroll-content'>
@@ -69,30 +69,28 @@
     </div>
   </div>
   </section>
-  <section class='app memo' ng-controller='MemoController as vm'>
+  <section class='app memo'>
     <div class='level'>
       <div>
-        <p class="btn-back mb10" ng-click='click.back()'>AppListへ戻る</p>
+        <p class='btn mb10 button is-link' ng-click='click.back()'>AppListへ戻る</p>
         <form>
           <input class='input mb20' type='text' ng-model='vm.memoTitle' placeholder='Memoを検索'>
         </form>  
-        <ul class='list content clearfix'>
-          <li class='list-content size480'>
+        <ul class='list content clearfix layout'>
+          <li class='list-content size480 box-rigt'>
             <form>
               <input class='input mb10' type='text' ng-model='vm.textTitle' placeholder='memoのtitleを入力'><br>
               <textarea class='textarea size280' ng-model='vm.textContents' placeholder='memoの内容を入力'>memoの内容を入力</textarea><br>
             </form>
-            <button class='button is-primary width-max' ng-click='vm.createText()'>Memoを作成</button>
+            <button class='btn button is-primary width-max' ng-click='vm.createText()'>Memoを作成</button>
           </li>
-          <li class='list-content size480'>
-            <h2 class='level-item'><span class='title is-4'>MemoList</span><span class='title is-4'>{{vm.todos.length}}</span></h2>
+          <li class='list-content size480 box-right'>
+            <h2 class='level-item list-title'><span class='title is-4'>MemoList</span><span class='title is-4'>{{vm.memoList.length}}</span></h2>
             <div class='scroll-content-wrapper'>
               <div class='scroll-content'>
-                <ul type='text' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
+                <ul class='content-memo' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
                   <li>
-                    <p>Time:{{memo.time}}</p>
-                    <p>Title:{{memo.title}}</p>
-                    <p>Contents：{{memo.contents}}</p>
+                    <p><span ng-click='vm.showDetail(memo.id)'>{{memo.title}}</span></p>
                   </li>
                 </ul>
               </div>
@@ -101,7 +99,19 @@
         </ul>
       </div>
     </div>
-  </section> 
+  </section>
+</div>
+<div class='sidein-content'>
+  <div class='detail' ng-controller='ClickController as click'>
+    <p class='btn mb20' ng-click='click.backList()'>listへ戻る</p>
+    <ul ng-repeat='memo in vm.memoList'>
+      <li>
+        <p class='title'>{{memo.title}}</p>
+        <p class='size13 mb10'>{{memo.time}}</p>
+        <p>{{memo.contents}}</p>
+      </li>
+    </ul>
+  </div>
 </div>
 </body>
 </html>
