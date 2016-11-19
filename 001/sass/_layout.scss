@@ -22,6 +22,15 @@
   margin-bottom: 30px;
 }
 
+.layout {
+	.box-left {
+		padding-left: 20px;
+	}
+	.box-right {
+		padding-right: 20px;
+	}
+}
+
 .width-max {
 	width: 100%;
 }
@@ -37,6 +46,6 @@
 	}
 	.size480 {
 		width: 480px;
-		height: 480px;
+		height: 400px;
 	}
 }

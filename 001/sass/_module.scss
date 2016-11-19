@@ -8,12 +8,21 @@
     height: 300px;
     font-size: 20px;
     float: left;
-    text-align: center;
-    padding: 20px;
+    padding-top: 40px;
     box-sizing: border-box;
     cursor: pointer;
     .list-style {
       text-align: left;
+    }
+    .list-title {
+      border-left: solid 6px #00b89c;
+      border-bottom: solid 1px #00b89c;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      .title {
+        display: inline-block;
+        margin-right: 10px;
+      }
     }
   }
 }
@@ -37,12 +46,17 @@
   top: 50px;
   left: -360px;
 }
+
 .scroll-content-wrapper {
   overflow: hidden;
   height: 385px;
   .scroll-content {
     overflow: scroll;
     height: 400px;
+    .content-todo, .content-complete {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
 

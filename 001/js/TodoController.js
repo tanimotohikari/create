@@ -26,7 +26,7 @@ function TodoController() {
       index++;
     }
   };
-  //memo
+
   //localStorageに保存されたtodoを表示する
   function showList() {
     var todos = localStorage.getItem('todos');

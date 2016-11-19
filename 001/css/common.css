@@ -51,7 +51,7 @@ table {
 
 .body-wrapper {
   width: 960px;
-  margin: 50px auto;
+  margin: 0 auto;
   display: none; }
 
 .body-wrapper {
@@ -62,12 +62,19 @@ table {
   height: 300px;
   font-size: 20px;
   float: left;
-  text-align: center;
-  padding: 20px;
+  padding-top: 40px;
   box-sizing: border-box;
   cursor: pointer; }
   .list .list-content .list-style {
     text-align: left; }
+  .list .list-content .list-title {
+    border-left: solid 6px #00b89c;
+    border-bottom: solid 1px #00b89c;
+    padding-bottom: 5px;
+    padding-left: 10px; }
+    .list .list-content .list-title .title {
+      display: inline-block;
+      margin-right: 10px; }
 
 .app {
   display: none; }
@@ -92,6 +99,9 @@ table {
   .scroll-content-wrapper .scroll-content {
     overflow: scroll;
     height: 400px; }
+    .scroll-content-wrapper .scroll-content .content-todo, .scroll-content-wrapper .scroll-content .content-complete {
+      margin-left: 0;
+      margin-right: 0; }
 
 .btn-back {
   cursor: pointer; }
@@ -118,6 +128,12 @@ table {
 .layout-bottom {
   margin-bottom: 30px; }
 
+.layout .box-left {
+  padding-left: 20px; }
+
+.layout .box-right {
+  padding-right: 20px; }
+
 .width-max {
   width: 100%; }
 
@@ -131,4 +147,4 @@ table {
 
 .content .size480 {
   width: 480px;
-  height: 480px; }
+  height: 400px; }
