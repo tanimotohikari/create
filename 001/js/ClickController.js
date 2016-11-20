@@ -20,6 +20,7 @@ function ClickController() {
   };
 
   self.backList = function() {
-    $('.sidein-content').animate({right: -100 + '%'},200);
+    $('.sidein-content').animate({left: -50 + '%'},200);
   }
+  
 }

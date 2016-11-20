@@ -88,7 +88,7 @@
             <h2 class='level-item list-title'><span class='title is-4'>MemoList</span><span class='title is-4'>{{vm.memoList.length}}</span></h2>
             <div class='scroll-content-wrapper'>
               <div class='scroll-content'>
-                <ul class='content-memo' ng-repeat='memo in vm.memoList | filter:vm.memoTitle'>
+                <ul class='content-memo' ng-repeat='memo in vm.memoLists | filter:vm.memoTitle'>
                   <li>
                     <p><span ng-click='vm.showDetail(memo.id)'>{{memo.title}}</span></p>
                   </li>
@@ -104,11 +104,14 @@
 <div class='sidein-content'>
   <div class='detail' ng-controller='ClickController as click'>
     <p class='btn mb20' ng-click='click.backList()'>listへ戻る</p>
-    <ul ng-repeat='memo in vm.memoList'>
+    <ul ng-repeat='detail in vm.memoDetail'>
       <li>
-        <p class='title'>{{memo.title}}</p>
-        <p class='size13 mb10'>{{memo.time}}</p>
-        <p>{{memo.contents}}</p>
+        <p class='size13 mb10'>{{detail.time}}</p>
+        <form>
+          <input class='input mb10' type='text' ng-model='detail.title' placeholder='memoのtitleを入力'><br>
+          <textarea class='textarea size280' ng-model='detail.contents' placeholder='memoの内容を入力'>memoの内容を入力</textarea><br>
+        </form>
+        <button class='btn button is-primary width-max' ng-click='vm.upDate()'>Memoを編集</button>
       </li>
     </ul>
   </div>
