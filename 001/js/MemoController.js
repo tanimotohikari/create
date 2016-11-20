@@ -46,8 +46,24 @@ function MemoController() {
     $('.sidein-content').animate({left: 0},200);
     for(var i=0, len=self.memoLists.length; i<len; i++) {
       if(memoId == self.memoLists[i].id) {
-        self.memoDetail.push({title: self.memoLists[i].title, contents: self.memoLists[i].contents, time: self.memoLists[i].time});
+        self.memoDetail.push({id: self.memoLists[i].id, title: self.memoLists[i].title, contents: self.memoLists[i].contents, time: self.memoLists[i].time});
       }
     }
+  }
+
+  self.upDate = function(updateData) {
+    var updateLists = [];
+    for(var i=0, len=self.memoLists.length; i<len; i++) {
+      updateLists.push({id: self.memoLists[i].id, title: self.memoLists[i].title, contents: self.memoLists[i].contents, time: self.memoLists[i].time});
+    }
+    self.memoLists = [];
+    for(var i=0, len=updateLists.length; i<len; i++) {
+      if(updateData.id == updateLists[i].id) {
+        self.memoLists.push({id: updateData.id, title: updateData.title, contents: updateData.contents, time: updateData.time});
+      } else {
+        self.memoLists.push({id: updateLists[i].id, title: updateLists[i].title, contents: updateLists[i].contents, time: updateLists[i].time});
+      }
+    }
+    console.log(self.memoLists);
   }
 }
