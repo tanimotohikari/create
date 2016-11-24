@@ -3,17 +3,19 @@ function ClickController() {
 
   self.startUpTodo = function() {
     $('.app-list').fadeOut();
+    $('.todo').fadeIn(500);
     $('.todo').animate({left: 0},500);
-    $('.todo').fadeIn();
   };
 
   self.startUpMemo = function() {
     $('.app-list').fadeOut();
+    $('.memo').fadeIn(500);
     $('.memo').animate({left: 0},500);
-    $('.memo').fadeIn();
   };
 
   self.back = function() {
+    var width = '-'+ $(window).width() + 'px';
+    $('.app').animate({left: width},500);
     $('.app').fadeOut();
     $('.app-list').animate({left: 0},500);
     $('.app-list').fadeIn();

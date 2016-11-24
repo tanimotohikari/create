@@ -6,6 +6,9 @@ angular.module('App', [])
   $('.body-wrapper').fadeIn();
     $(window).on('load resize', function(){
       var height = $(window).height();
+      var width = $(window).width();
       $('.sidein-content').css('height', height + 'px');
+      $('.todo').css('left', '-' + width + 'px');
+      $('.memo').css('left', '-' + width + 'px');
     });
 }]);

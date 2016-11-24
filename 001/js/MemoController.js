@@ -64,6 +64,8 @@ function MemoController() {
         self.memoLists.push({id: updateLists[i].id, title: updateLists[i].title, contents: updateLists[i].contents, time: updateLists[i].time});
       }
     }
-    console.log(self.memoLists);
+    var jsonTodoData =[JSON.stringify(self.memoLists)];
+    localStorage.setItem('memoLists', jsonTodoData);
+    $('.sidein-content').animate({left: -50 + '%'},200);
   }
 }
