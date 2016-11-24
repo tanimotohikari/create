@@ -48,15 +48,10 @@ function TodoController() {
       completions = JSON.parse(completions);
       for(var i=0, len=completions.length; i<len; i++) {
         self.completions.push({id: completions[i].id, title: completions[i].title, done: completions[i].done, time: completions[i].time, date: completions[i].date});
-        console.log(completeDay);
-        // if(completeDay[i].date != completions[i].date) {
-        //   completeDay.push({date: completions[i].date});
-        // }
       }
     } else {
       completions = [];
     }
-    console.log(completeDay);
   }
 
   showList();

@@ -11,4 +11,9 @@ angular.module('App', [])
       $('.todo').css('left', '-' + width + 'px');
       $('.memo').css('left', '-' + width + 'px');
     });
-}]);
+}])
+.directive('first-directive', function(){
+  return {
+    template: '<p>template/sideContent.html</p>'
+  }; 
+});

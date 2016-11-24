@@ -42,7 +42,6 @@ function MemoController() {
   showMemoList();
 
   self.showDetail = function(memoId) {
-    console.log(memoId);
     self.memoDetail = [];
     $('.sidein-content').animate({left: 0},200);
     for(var i=0, len=self.memoLists.length; i<len; i++) {
