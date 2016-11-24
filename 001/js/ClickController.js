@@ -13,12 +13,19 @@ function ClickController() {
     $('.memo').animate({left: 0},500);
   };
 
+  self.showData = function() {
+    $('.app-list').fadeOut();
+    $('.data').fadeIn(500);
+    $('.data').animate({left: 0},500);
+  };
+
   self.back = function() {
     var width = '-'+ $(window).width() + 'px';
     $('.app').animate({left: width},500);
     $('.app').fadeOut();
     $('.app-list').animate({left: 0},500);
     $('.app-list').fadeIn();
+    location.reload();
   };
 
   self.backList = function() {

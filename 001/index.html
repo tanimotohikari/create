@@ -7,8 +7,6 @@
 <link rel='shortcut icon' href=''>
 	<script src='node_modules/angular/angular.min.js'></script>
   <script src='node_modules/jquery/dist/jquery.min.js'></script>
-  <!-- <script src="node_modules/underscore/underscore-min.js"></script> -->
-  <!-- <script src="node_modules/angular-ui-sortable/dist/sortable.min.js"></script> -->
   <script src='js/TodoController.js'></script>
   <script src='js/MemoController.js'></script>
   <script src='js/ClickController.js'></script>
@@ -16,18 +14,18 @@
   <link rel='stylesheet' href='css/common.css'>
   <link rel='stylesheet' href='node_modules/bulma/css/bulma.css'>
 	<title>Applications</title>
-  <style>
-  </style>
 </head>
 <body ng-controller='MemoController as vm'>
 <div class='body-wrapper hero-body' ng-controller='ClickController as click'>
+
   <section class='layout-section app-list clearfix container has-text-centered'>
     <ul class='content list clearfix'>
       <li class='list-content size300 start-up-todo' ng-click='click.startUpTodo()'>TODO</li>
       <li class='list-content size300 layout-side　start-up-memo' ng-click='click.startUpMemo()'>MEMO</li>
-      <li class='list-content size300 start-up-memo' ng-click='click.startUpMemo()'>DATA</li>
+      <li class='list-content size300 start-up-memo' ng-click='click.showData()'>DATA</li>
     </ul>
   </section>
+
   <section class='app todo' ng-controller='TodoController as vm'>
   <div class='level'>
     <div>
@@ -42,7 +40,7 @@
         <li class='list-content size480 box-left'>
           <h2 class='level-item list-title'><span class='title is-4'>Todo</span><span class='title is-4'>{{vm.todos.length}}</span><span class='title is-5'>items</span></h2>
           <div class='scroll-content-wrapper'>
-            <div class='scroll-content'>
+            <div class='scroll-contents'>
               <ul class='content-todo' ng-repeat='todo in vm.todos | filter:vm.keyword'>
                 <li class='list-style'>
                   <input type='checkbox' ng-model='todo.done' ng-click='vm.check(todo.done)'>
@@ -56,7 +54,7 @@
         <li class='list-content size480 box-right'>
           <h2 class='level-item list-title'><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span><span class='title is-5'>items</span></h2>
           <div class='scroll-content-wrapper'>
-            <div class='scroll-content'>
+            <div class='scroll-contents'>
               <ul class='content-complete' type='text' ng-repeat='complete in vm.completions | filter:vm.keyword'>
                 <li class='list-style'>
                   <span ng-class="{'done': todo.done }"><span>{{complete.time}}</span><span>{{complete.title}}</span></span>
@@ -69,6 +67,7 @@
     </div>
   </div>
   </section>
+
   <section class='app memo'>
     <div class='level'>
       <div>
@@ -87,7 +86,7 @@
           <li class='list-content size480 box-right'>
             <h2 class='level-item list-title'><span class='title is-4'>MemoList</span><span class='title is-4'>{{vm.memoList.length}}</span></h2>
             <div class='scroll-content-wrapper'>
-              <div class='scroll-content'>
+              <div class='scroll-contents'>
                 <ul class='content-memo' ng-repeat='memo in vm.memoLists | filter:vm.memoTitle'>
                   <li>
                     <p><span ng-click='vm.showDetail(memo.id)'>{{memo.title}}</span></p>
@@ -100,6 +99,24 @@
       </div>
     </div>
   </section>
+
+  <section class='app data' ng-controller='TodoController as vm'>
+    <div class='level'>
+      <div>
+        <p class='btn mb10 button is-link' ng-click='click.back()'>AppListへ戻る</p>
+      
+        <ul class='data-list'>
+          <li class='list-inner'>
+            <h2 class='level-item list-title'><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span><span class='title is-5'>items</span></h2>
+            <ul ng-repeat='complete in vm.completions'>
+              <li>{{complete.date}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
 </div>
 <div class='sidein-content'>
   <div class='detail' ng-controller='ClickController as click'>
