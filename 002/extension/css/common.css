@@ -1,0 +1,9 @@
+body {
+  width: 100%;
+}
+
+#output {
+  width: 129px;
+  height: 20px;
+  border: 1px solid #cdcdcd;
+}
