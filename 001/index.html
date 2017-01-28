@@ -7,6 +7,7 @@
 <link rel='shortcut icon' href=''>
 	<script src='node_modules/angular/angular.min.js'></script>
   <script src='node_modules/jquery/dist/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
   <script src='js/TodoController.js'></script>
   <script src='js/MemoController.js'></script>
   <script src='js/ClickController.js'></script>
@@ -104,12 +105,8 @@
     <div class='level'>
       <div>
         <p class='btn mb10 button is-link' ng-click='click.back()'>AppListへ戻る</p>
-      
-        <ul class='data-list'>
-          <li class='list-inner'>
-            <h2 class='level-item list-title'><span class='title is-4'>Complete</span><span class='title is-4'>{{vm.completions.length}}</span><span class='title is-5'>items</span></h2>
-          </li>
-        </ul>
+        <canvas id="myChart"></canvas>
+        
       </div>
     </div>
   </section>

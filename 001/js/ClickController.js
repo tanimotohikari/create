@@ -18,4 +18,10 @@ function ClickController() {
     $('.app-list').animate({'left':'0'},500);
     $('.app-list').fadeIn();
   };
+
+  self.showData = function() {
+    $('.app-list').fadeOut();
+    $('.data').animate({'left':'0'},500);
+    $('.data').fadeIn();
+  };
 }
