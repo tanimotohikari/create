@@ -9,7 +9,8 @@ function searchItem(keyword,page) {
   type: 'GET',
   url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20130424',
   data: {
-
+  applicationId: '1031022262194317111',
+  affiliateId: '146d79aa.7a7900a1.146d79ab.cab55273',
   keyword: keyword,
   page: page
   }
@@ -67,15 +68,6 @@ $('.js-sort-review-score-high').on('click', function(){
   if(Items) {
   Items.Items.sort(function(a, b) {
   return b.Item.reviewAverage - a.Item.reviewAverage;
-  });
-  createItems(Items);
-  }
-});
-
-$(document).on('click', '.js-sort-review-score-low', function(){
-  if(Items) {
-  Items.Items.sort(function(a, b) {
-  return a.Item.reviewAverage - b.Item.reviewAverage;
   });
   createItems(Items);
   }
@@ -157,4 +149,23 @@ $(function (e) {
 
   $window.trigger('scroll');
 
+});
+
+var ctx = document.getElementById("myChartRadar");
+  var myChart = new Chart(ctx, {
+  type: 'radar',
+  data: {
+    labels: ["M", "T", "W", "T", "F", "S", "S"],
+    datasets: [{
+      label: 'apples',
+      backgroundColor: "rgba(153,255,51,0.4)",
+      borderColor: "rgba(153,255,51,1)",
+      data: [12, 19, 3, 17, 28, 24, 7]
+    }, {
+      label: 'oranges',
+      backgroundColor: "rgba(255,153,0,0.4)",
+      borderColor: "rgba(255,153,0,1)",
+      data: [30, 29, 5, 5, 20, 3, 10]
+    }]
+  }
 });
