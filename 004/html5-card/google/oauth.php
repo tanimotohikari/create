@@ -15,25 +15,19 @@ $params = array(
   'client_secret' => CONSUMER_SECRET,
 );
 
+$params = http_build_query($params, "", "&");
+
+$header = array(
+  'Content-Type: application/x-www-form-urlencoded',
+  'Content-Length: ' .strlen($params)
+);
+
 // POST送信
 $options = array('http' => array(
   'method' => 'POST',
-  'content' => http_build_query($params)
+  'header' => implode("\r\n", $header),
+  'content' => $params
 ));
-
-// $params = http_build_query($params, "", "&");
-
-// $header = array(
-//   'Content-Type: application/x-www-form-urlencoded',
-//   'Content-Length: ' .strlen($params)
-// );
-
-// // POST送信
-// $options = array('http' => array(
-//   'method' => 'POST',
-//   'header' => implode("\r\n", $header),
-//   'content' => $params
-// ));
 
 // アクセストークンの取得
 $res = file_get_contents(TOKEN_URL, false, stream_context_create($options));
