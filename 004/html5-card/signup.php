@@ -24,13 +24,21 @@ if (isset($_POST['signUp'])) {
       // 3. エラー処理
       try {
           $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
           $stmt = $pdo->prepare('INSERT INTO users(name, password) VALUES (?, ?)');
-
           $stmt->execute(array($username, $password));  
           $userid = $pdo->lastinsertid();
-          echo 'test';
-          exit;
+
+          $stmt = $pdo->prepare('SELECT * FROM users WHERE name = "' . $username .'"');
+          $stmt->execute(array($username));
+
+          if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if ($row['password'] == $password) {
+              $_SESSION['id'] = $row['id'];
+              header('Location: index.php');
+              exit();
+            }
+          }
+        
           header('Location: index.php');
       } catch (PDOException $e) {
           $errorMessage = 'データベースエラー';
@@ -53,9 +61,9 @@ if (isset($_POST['signUp'])) {
     <form id='loginForm' name='loginForm' action='' method='POST'>
       <fieldset>
       <legend>新規登録フォーム</legend>
-      <div style='color: #ff0000;'><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
-      <div style='color: #0000ff;'><?php echo htmlspecialchars($signUpMessage, ENT_QUOTES); ?></font></div>
-      <label for='username'>ユーザー名</label><input type='text' id='username' name='username' placeholder='ユーザー名を入力' value='<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>'>
+      <div><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+      <div><?php echo htmlspecialchars($signUpMessage, ENT_QUOTES); ?></font></div>
+      <label for='username'>ニックネーム</label><input type='text' id='username' name='username' placeholder='ニックネームを入力' value='<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>'>
       <br>
       <label for='password'>パスワード</label><input type='password' id='password' name='password' value='' placeholder='パスワードを入力'>
       <br>

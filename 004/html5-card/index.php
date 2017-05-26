@@ -30,18 +30,19 @@ if (!isset($_SESSION['id'])) {
   <?php include_once("analyticstracking.php") ?>
 </head>
 <body>
-  <a class="test01" href="#test" onClick="_gaq.push(['_trackEvent', ‘内部リンク’, ‘クリック’, ‘/index/test01/aaa’, true]);">テスト</a>
+<!--   <a class="test01" href="#test" onClick="_gaq.push(['_trackEvent', ‘内部リンク’, ‘クリック’, ‘/index/test01/aaa’, true]);">テスト</a>
+ -->
   <h1>HTML5かるた</h1> 
   <p><a href='vocabulary.php'>単語帳</a></p>
   <p><a href='karuta.php'>かるたをはじめる</a></p>
   <p><a href='logout.php'>ログアウト</a></p>
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(function() {  
     $(".test01").on('click', function() {        
       console.log('test');
     });
         
     });
-</script>
+</script> -->
 </html>

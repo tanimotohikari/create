@@ -1,0 +1,16 @@
+header {
+  position: fixed;
+  width: 100%;
+  padding: 10px 5%;
+  background: #fff;
+  z-index: 1;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+label {
+  cursor: pointer;
+}

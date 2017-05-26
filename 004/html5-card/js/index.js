@@ -1,11 +1,6 @@
 $(function () {
-  onkeydown = function(e) {
-    if (e.keyCode === 32) {
-      $('.main-contents, .question').removeClass('is-hide');
-      $('.start-announce').addClass('is-hide');
-    }
-  }
-
+  
+  startGame();
   selectCard();
 
 });
@@ -17,9 +12,16 @@ var mean = JSON.parse($script.attr('data-maen'));
 var answer = JSON.parse($script.attr('data-answer'));
 var answerTag = JSON.parse($script.attr('data-answerTag'));
 
+
+function startGame() {
+  $('.btn-start').on('click', function () {
+    $(this).addClass('is-hide');
+    $('.main-contents, .question').removeClass('is-hide');
+  })
+}
+
 function selectCard() {
   $('.js-karuta-card').on('click', function () {
-    $(this).parent().addClass('is-selected');
     $.post('questionCheck.php', {
       selectAnswer : $(this).val(),
       answer : answer[count],
@@ -27,8 +29,20 @@ function selectCard() {
       point : point
     }, function(data) {
       count++;
+      if (count === 30) {
+        $('.modal-overlay').fadeIn();
+      }
       point = data.point;
-      $('.karuta-card').removeClass('is-selected');
+      var kardNumber = '#' + data.answer;
+      
+      if (data.successFlag) {
+        $(kardNumber).css({'background': '#e53'});
+      } else {
+        $(kardNumber).css({
+          'background': '#fff',
+          'pointer-events' : 'none'
+        });
+      }
       $('.question').text(mean[count]);
       $('.answer-text').text(data.text);
       $('.answer-text-tag').text(data.answerTag);

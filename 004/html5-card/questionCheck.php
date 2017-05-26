@@ -7,14 +7,17 @@ $correctAnswer = intval($_POST['point']);
 
 if ($answer === $selectAnswer) {
   $result['point'] = ++$correctAnswer;
-  $result['correctAnswer'] = '現在の正解数は' . $correctAnswer . '問です';
+  $result['correctAnswer'] = $correctAnswer;
   $result['text'] = '前回の問題は『正解』です';
   $result['answerTag'] = '';
+  $result['successFlag'] = 1;
 } else {
   $result['point'] = $correctAnswer;
-  $result['correctAnswer'] = '現在の正解数は' . $correctAnswer . '問です';
+  $result['correctAnswer'] = $correctAnswer;
   $result['text'] = '前回の問題は『不正解』です';
   $result['answerTag'] = '前回の正解は『<' . $answerTag . '>』タグです';
+  $result['successFlag'] = 0;
+  $result['answer'] = $answer;
 }
 
 header('Content-Type: application/json; charset=utf-8');
