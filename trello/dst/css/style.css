@@ -40,6 +40,9 @@ table {
   display: block;
   clear: both; }
 
+.l-bottom {
+  margin-bottom: 20px; }
+
 .l-header {
   position: relative; }
   .l-header .l-header-logo {
@@ -64,6 +67,37 @@ table {
   background-color: #026aa7;
   height: 30px;
   padding: 5px 8px; }
+  .header .header-btn {
+    transition: .1s ease;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    color: #f3f3f3;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-decoration: none;
+    min-width: 30px;
+    font-size: 14px; }
+  .header .header-input {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    float: left;
+    font-size: 13px;
+    height: 28px;
+    margin-left: 8px;
+    min-height: 28px;
+    padding-right: 30px;
+    padding-left: 8px;
+    line-height: 19px;
+    transition: width 150ms;
+    width: 180px;
+    z-index: 1; }
 
 .bord {
   padding: 20px 1%; }
@@ -85,7 +119,7 @@ table {
   text-decoration: none;
   padding: 8px;
   border-radius: 3px;
-  height: 70px; }
+  height: 75px; }
 
 .card-foundation {
   background-color: #000;
@@ -98,5 +132,11 @@ table {
   right: 0;
   margin: 0 8px 10px 0;
   display: none; }
-  .card-foundation:hover {
-    display: block; }
+
+.btn-create {
+  background-color: #e2e4e6;
+  color: #838c91; }
+
+.anchor {
+  text-decoration: underline;
+  color: #838c91; }
