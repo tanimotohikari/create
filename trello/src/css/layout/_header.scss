@@ -6,4 +6,24 @@
     left: 50%;
     display: block;
   }
+
+  .l-header-input {
+    float: left;
+    margin-left: 8px;
+    width: 185px;
+
+    .l-header-input-text {
+      width: 85%;
+    }
+  }
+
+  .l-header-function {
+    float: right;
+  }
+
+  .l-header-user {
+    width: 32px;
+    float: right;
+    margin: 0 4px 4px 0;
+  }
 }

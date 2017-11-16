@@ -43,12 +43,30 @@ table {
 .l-bottom {
   margin-bottom: 20px; }
 
+.l-right-small {
+  margin-right: 10px; }
+
+.l-right {
+  margin-right: 20px; }
+
 .l-header {
   position: relative; }
   .l-header .l-header-logo {
     position: absolute;
     left: 50%;
     display: block; }
+  .l-header .l-header-input {
+    float: left;
+    margin-left: 8px;
+    width: 185px; }
+    .l-header .l-header-input .l-header-input-text {
+      width: 85%; }
+  .l-header .l-header-function {
+    float: right; }
+  .l-header .l-header-user {
+    width: 32px;
+    float: right;
+    margin: 0 4px 4px 0; }
 
 .l-bord .l-bord-title-icon {
   margin: 0 10px 0 5px; }
@@ -74,30 +92,60 @@ table {
     color: #f3f3f3;
     float: left;
     line-height: 30px;
-    padding: 0 10px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     text-decoration: none;
     min-width: 30px;
-    font-size: 14px; }
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold; }
+    .header .header-btn.header-btn-add, .header .header-btn.header-btn-info, .header .header-btn.header-btn-notice {
+      padding: 0; }
+    .header .header-btn.header-btn-list {
+      padding: 0 10px; }
   .header .header-input {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
     border: none;
     color: rgba(255, 255, 255, 0.5);
-    float: left;
     font-size: 13px;
     height: 28px;
-    margin-left: 8px;
     min-height: 28px;
-    padding-right: 30px;
+    padding-top: 2px;
+    padding-right: 10px;
     padding-left: 8px;
     line-height: 19px;
     transition: width 150ms;
-    width: 180px;
     z-index: 1; }
+    .header .header-input .header-input-text {
+      background: none;
+      border: 0;
+      height: 25px; }
+    .header .header-input .header-input-icon {
+      font-size: 20px;
+      padding-top: 2px;
+      color: #fff; }
+  .header .header-user {
+    background-color: #d6dadc;
+    color: #4d4d4d;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    overflow: visible;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    z-index: 0;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold; }
 
 .bord {
   padding: 20px 1%; }
@@ -139,4 +187,6 @@ table {
 
 .anchor {
   text-decoration: underline;
-  color: #838c91; }
+  color: #838c91;
+  padding: 7px;
+  font-size: 14px; }

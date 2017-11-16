@@ -10,11 +10,22 @@
     color: #f3f3f3;
     float: left;
     line-height: 30px;
-    padding: 0 10px;
     user-select: none;
     text-decoration: none;
     min-width: 30px;
     font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+
+    &.header-btn-add,
+    &.header-btn-info,
+    &.header-btn-notice {
+      padding: 0;
+    }
+
+    &.header-btn-list {
+      padding: 0 10px;
+    }
   }
 
   .header-input {
@@ -22,17 +33,44 @@
     border-radius: 3px;
     border: none;
     color: rgba(255, 255, 255, .5);
-    float: left;
     font-size: 13px;
     height: 28px;
-    margin-left: 8px;
     min-height: 28px;
-    padding-right: 30px;
+    padding-top: 2px;
+    padding-right: 10px;
     padding-left: 8px;
     line-height: 19px;
-    -webkit-transition: width 150ms;
     transition: width 150ms;
-    width: 180px;
     z-index: 1;
+
+    .header-input-text {
+      background: none;
+      border: 0;
+      height: 25px;
+    }
+
+    .header-input-icon {
+      font-size: 20px;
+      padding-top: 2px;
+      color: #fff;
+    }
+  }
+
+  .header-user {
+    background-color: #d6dadc;
+    color: #4d4d4d;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    overflow: visible;
+    position: relative;
+    user-select: none;
+    z-index: 0;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
   }
 }
