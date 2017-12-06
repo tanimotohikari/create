@@ -16,3 +16,10 @@ HTMLとCSS（SMACSS)でのコーディングを意識して取り組みました
 ・http://fontawesome.io/
 ・HTML
 ・CSS（Sass）
+
+わかったこと
+・今の自分の実力
+
+できなかったこと
+・動き（アニメーション）
+・プロパティの理解（flexboxなど）
