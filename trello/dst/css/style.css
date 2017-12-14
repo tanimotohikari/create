@@ -51,14 +51,20 @@ table {
 
 .l-header {
   position: relative; }
+  .l-header .l-header-btn {
+    min-width: 14px;
+    float: left;
+    margin: 3px 10px 3px 0; }
   .l-header .l-header-logo {
+    display: block;
     position: absolute;
     left: 50%;
-    display: block; }
+    margin-top: 3px;
+    margin-left: -15px; }
   .l-header .l-header-input {
+    width: 185px;
     float: left;
-    margin-left: 8px;
-    width: 185px; }
+    margin-top: 3px; }
     .l-header .l-header-input .l-header-input-text {
       width: 85%; }
   .l-header .l-header-function {
@@ -66,7 +72,7 @@ table {
   .l-header .l-header-user {
     width: 32px;
     float: right;
-    margin: 0 4px 4px 0; }
+    margin: 2px 4px 0 0; }
 
 .l-bord .l-bord-title-icon {
   margin: 0 10px 0 5px; }
@@ -83,69 +89,36 @@ table {
 
 .header {
   background-color: #026aa7;
-  height: 30px;
-  padding: 5px 8px; }
+  padding: 2px 8px; }
   .header .header-btn {
-    transition: .1s ease;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
+    padding: 0 10px;
     color: #f3f3f3;
-    float: left;
-    line-height: 30px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    text-decoration: none;
-    min-width: 30px;
     font-size: 14px;
+    font-weight: bold;
     text-align: center;
-    font-weight: bold; }
-    .header .header-btn.header-btn-add, .header .header-btn.header-btn-info, .header .header-btn.header-btn-notice {
-      padding: 0; }
-    .header .header-btn.header-btn-list {
-      padding: 0 10px; }
+    text-decoration: none;
+    line-height: 30px; }
   .header .header-input {
+    font-size: 13px;
+    line-height: 19px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
-    border: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 13px;
-    height: 28px;
-    min-height: 28px;
-    padding-top: 2px;
-    padding-right: 10px;
-    padding-left: 8px;
-    line-height: 19px;
-    transition: width 150ms;
-    z-index: 1; }
+    padding: 3px 10px; }
     .header .header-input .header-input-text {
       background: none;
-      border: 0;
-      height: 25px; }
+      border: 0; }
     .header .header-input .header-input-icon {
       font-size: 20px;
-      padding-top: 2px;
-      color: #fff; }
+      color: #fff;
+      padding-top: 2px; }
   .header .header-user {
-    background-color: #d6dadc;
     color: #4d4d4d;
-    display: block;
-    height: 32px;
-    line-height: 32px;
-    overflow: visible;
-    position: relative;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    z-index: 0;
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    text-align: center;
     font-size: 12px;
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 16px;
+    background-color: #d6dadc; }
 
 .bord {
   padding: 20px 1%; }
@@ -171,7 +144,6 @@ table {
 
 .card-foundation {
   background-color: #000;
-  opacity: 0.25;
   border-radius: 3px;
   position: absolute;
   top: 0;
@@ -179,11 +151,20 @@ table {
   bottom: 0;
   right: 0;
   margin: 0 8px 10px 0;
-  display: none; }
+  display: none;
+  opacity: 0.25; }
 
 .btn-create {
   background-color: #e2e4e6;
   color: #838c91; }
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .anchor {
   text-decoration: underline;

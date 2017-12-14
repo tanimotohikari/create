@@ -2,3 +2,9 @@
   background-color: #e2e4e6;
   color: #838c91;
 }
+
+.btn {
+  background-color: $background-alpha;
+  border-radius: 3px;
+  user-select: none;
+}
