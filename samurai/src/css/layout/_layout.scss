@@ -1,0 +1,17 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.l-bottom {
+  margin-bottom: 20px;
+}
+
+.l-right-small {
+  margin-right: 10px;
+}
+
+.l-right {
+  margin-right: 20px;
+}

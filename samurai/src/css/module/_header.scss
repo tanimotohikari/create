@@ -1,0 +1,43 @@
+.header {
+  background-color: $main-color;
+  padding: 2px 8px;
+
+  .header-btn {
+    padding: 0 10px;
+    color: #f3f3f3;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+  }
+
+  .header-input {
+    font-size: 13px;
+    line-height: 19px;
+    background-color: $background-alpha;
+    border-radius: 3px;
+    padding: 3px 10px;
+
+    .header-input-text {
+      background: none;
+      border: 0;
+    }
+
+    .header-input-icon {
+      font-size: 20px;
+      color: #fff;
+      padding-top: 2px;
+    }
+  }
+
+  .header-user {
+    color: #4d4d4d;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 16px;
+    background-color: #d6dadc;
+  }
+}
