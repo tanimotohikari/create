@@ -1,19 +1,25 @@
 // base
 @import "base/reset.scss";
 @import "base/setting.scss";
+@import "base/base.scss";
 
 // layout
 @import "layout/layout.scss";
 @import "layout/header.scss";
-@import "layout/bord.scss";
+@import "layout/globalNavi.scss";
+@import "layout/feature.scss";
+//@import "layout/ranking.scss";
 
 // module
 @import "module/header.scss";
-@import "module/bord.scss";
-@import "module/card.scss";
-@import "module/button.scss";
 @import "module/text.scss";
-
+@import "module/globalNavi.scss";
+@import "module/mainVisual.scss";
+@import "module/heading.scss";
+@import "module/checkList.scss";
+@import "module/navi.scss";
+@import "module/feature.scss";
+@import "module/ranking.scss";
 
 // state
 //@import "state/state.scss";

@@ -1,6 +1,61 @@
-.anchor {
-  text-decoration: underline;
-  color: $sub-font-color;
-  padding: 7px;
-  font-size: 14px;
+.text-small {
+  font-size: 12px !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-middle {
+  vertical-align: middle;
+}
+
+.text-strong {
+  font-weight: bold;
+}
+
+.text-marker {
+  border-bottom: 3px solid #ffcc33;
+  font-weight: bold;
+}
+
+.text-positive {
+  color: #3698f3;
+  font-weight: bold;
+}
+
+.text-negative {
+  color: #dd171f;
+  font-weight: bold;
+}
+
+.text-anchor {
+  color: #245fbb;
+
+  & > .text-anchor-icon {
+    color: #245fbb;
+    text-decoration: underline;
+    padding-left: 15px;
+    background: url(../../src/img/cmn_bg_pic.png) no-repeat left -61px;
+  }
+}
+
+.text-title {
+  color: #245fbb;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text-caption {
+  color: #602a08;
+  font-weight: bold;
+}
+
+.text-notes {
+  color: #555;
+  font-size: 12px;
 }

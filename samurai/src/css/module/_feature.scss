@@ -1,0 +1,41 @@
+.feature {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+
+  .feature-heading {
+    color: #602a08;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 10px;
+    background-color: #f8f3e8;
+  }
+
+  .feature-contents {
+    padding: 10px;
+
+    .feature-contents-text {
+      font-size: 13px;
+      line-height: 1.3em;
+    }
+  }
+
+  .feature-flowList > li {
+    position: relative;
+
+    &:after {
+      content: url(../../src/img/flow-arrow.png);
+      z-index: 5;
+      position: absolute;
+      top: 55px;
+      right: -20px;
+      width: 19px;
+      height: 33px;
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.global-navi {
+  padding: 10px 0;
+  border-bottom: 2px solid #dd171f;
+
+  .global-navi-list {
+
+    & > li {
+      padding: 0 13px;
+      border-left: 1px dotted #999;
+
+      .global-navi-list-anchor {
+        color: #dd171f;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+}

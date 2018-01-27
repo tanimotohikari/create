@@ -1,0 +1,11 @@
+.l-global-navi {
+
+ .l-global-navi-list {
+  width: $wrapper-width;
+  margin: 0 auto;
+
+  & > li {
+    float: left;
+  }
+ }
+}

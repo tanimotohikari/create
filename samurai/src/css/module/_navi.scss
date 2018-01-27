@@ -1,0 +1,43 @@
+.navi-list {
+  border: 2px solid #ddd;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  display: table;
+
+  & > li {
+    display: table-cell;
+    position: relative;
+    width: $wrapper-width/10;
+    border-right: 1px dotted #ddd;
+    padding: 25px 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border: 0;
+      border-top: 2px solid #ddd;
+      border-right: 2px solid #ddd;
+      transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    .list-item {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+}

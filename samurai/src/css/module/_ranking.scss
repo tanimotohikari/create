@@ -1,0 +1,57 @@
+.ranking {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+
+  & > li {
+    border-bottom: 2px solid #ccc;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .ranking-company {
+    padding: 25px 15px 15px 50px;
+    position: relative;
+
+    & > * {
+      float: left;
+    }
+
+    .ranking-company-label {
+      position: absolute;
+      top: -2px;
+      left: 12px;
+    }
+
+    .ranking-company-thumbnail {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .ranking-company-rate {
+      font-size: 15px;
+
+      .ranking-company-rate-star {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .ranking-rate-list {
+    font-size: 12px;
+    margin: 0 10px 15px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -ms-border-radius: 15px;
+
+    & > * {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}

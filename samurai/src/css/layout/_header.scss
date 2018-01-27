@@ -1,37 +1,25 @@
 .l-header {
-  position: relative;
-
-  .l-header-btn {
-    min-width: 14px;
-    float: left;
-    margin: 3px 10px 3px 0;
-  }
+  width: 960px;
+  margin: 0 auto;
 
   .l-header-logo {
-    display: block;
-    position: absolute;
-    left: 50%;
-    margin-top: 3px;
-    margin-left: -15px;
-  }
-
-  .l-header-input {
-    width: 185px;
+    width: 114px;
     float: left;
-    margin-top: 3px;
+  }
 
-    .l-header-input-text {
-      width: 85%;
+  .l-header-caption {
+    min-width: 400px;
+    float: left;
+    margin-left: 15px;
+  }
+
+  .l-header-list {
+    width: 230px;
+    float: right;
+
+    & > li {
+      float: left;
+      margin-right: 10px;
     }
-  }
-
-  .l-header-function {
-    float: right;
-  }
-
-  .l-header-user {
-    width: 32px;
-    float: right;
-    margin: 2px 4px 0 0;
   }
 }
