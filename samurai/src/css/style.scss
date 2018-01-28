@@ -8,9 +8,10 @@
 @import "layout/header.scss";
 @import "layout/globalNavi.scss";
 @import "layout/feature.scss";
-//@import "layout/ranking.scss";
+@import "layout/ranking.scss";
 
 // module
+@import "module/wrapper.scss";
 @import "module/header.scss";
 @import "module/text.scss";
 @import "module/globalNavi.scss";
@@ -20,6 +21,7 @@
 @import "module/navi.scss";
 @import "module/feature.scss";
 @import "module/ranking.scss";
+@import "module/prefecture.scss";
 
 // state
 //@import "state/state.scss";

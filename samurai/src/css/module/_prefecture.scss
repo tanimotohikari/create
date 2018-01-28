@@ -1,0 +1,39 @@
+.prefecture-area {
+
+  & > li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  & > li:last-child {
+    border-bottom: 0;
+  }
+
+  .prefecture-area-title {
+    display: inline-block;
+    width: 150px/$wrapper-width*100%;
+  }
+
+  .prefecture-area-list {
+    display: inline-block;
+
+    & > li {
+      float: left;
+      padding-right: 10px;
+
+      &:after {
+        content: '|';
+        color: #245fbb;
+        margin-left: 10px;
+      }
+
+      &:first-child {
+
+        &:before {
+          content: '…';
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

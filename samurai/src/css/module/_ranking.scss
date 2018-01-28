@@ -55,3 +55,31 @@
     }
   }
 }
+
+.ranking-list {
+
+  .ranking-list-item {
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+
+    .ranking-list-thumbnail {
+      padding-right: 5%;
+    }
+
+    .ranking-list-title {
+      color: #245fbb;
+      font-size: 16px;
+      font-weight: bold;
+      border-bottom: 1px dotted #ccc;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+
+    .ranking-list-text {
+      font-size: 12px;
+    }
+  }
+}
