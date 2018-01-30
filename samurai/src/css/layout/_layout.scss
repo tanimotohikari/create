@@ -5,11 +5,19 @@
 }
 
 .full {
-  width: 100%;
+  width: 100% !important;
 }
 
 .half {
-  width: 50%;
+  width: 50% !important;
+}
+
+.quart {
+  width: 25% !important;
+}
+
+.minimum {
+  width: 10% !important;
 }
 
 /*layout margen*/
@@ -31,6 +39,10 @@
 }
 
 .l-bottom-xlarge {
+  margin-bottom: 30px;
+}
+
+.l-bottom-xxlarge {
   margin-bottom: 30px;
 }
 

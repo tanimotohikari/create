@@ -1,0 +1,43 @@
+.table {
+  width: 100%;
+  border: 1px solid #ccc;
+
+  & > td {
+    
+    text-align: center;
+  }
+
+  .table-heading {
+    padding: 15px 10px;
+    font-weight: bold;
+    background-color: #e6e5e5;
+
+    & > th {
+      padding: 15px 10px;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  & > tbody {
+    text-align: center;
+
+    & > tr {
+      border-bottom: 1px solid #ccc;
+
+      & > td {
+      border-right: 1px solid #ccc;
+    }
+
+    }
+
+    .table-title {
+      width: 50%;
+      text-align: left;
+      font-weight: bold;
+      padding: 15px 10px;
+      border-right: 1px solid #ccc;
+      background-color: #f3f3f3;
+    }
+  }
+}
