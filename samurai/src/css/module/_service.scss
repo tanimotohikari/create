@@ -1,4 +1,12 @@
 .service {
+  position: relative;
+
+  .service-heading {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -123px;
+  }
 
   .service-reservartion {
     border: 1px solid #fa7b1c;

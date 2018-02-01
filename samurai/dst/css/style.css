@@ -668,16 +668,22 @@ body {
       left: 0;
       margin: 6px auto auto; }
 
-.service .service-reservartion {
-  border: 1px solid #fa7b1c;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
-  padding: 25px; }
-
-.service .service-estimate {
-  border: 1px solid #088107;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
-  padding: 25px; }
+.service {
+  position: relative; }
+  .service .service-heading {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -123px; }
+  .service .service-reservartion {
+    border: 1px solid #fa7b1c;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    padding: 25px; }
+  .service .service-estimate {
+    border: 1px solid #088107;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    padding: 25px; }
