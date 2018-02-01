@@ -43,11 +43,39 @@
 }
 
 .l-bottom-xxlarge {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.l-left-xsmall {
+  margin-left: 5px;
+}
+
+.l-left-small {
+  margin-left: 10px;
 }
 
 .l-left {
   margin-left: 15px;
+}
+
+.l-left-large {
+  margin-left: 20px;
+}
+
+.l-right-xsmall {
+  margin-right: 5px;
+}
+
+.l-right-small {
+  margin-right: 10px;
+}
+
+.l-right {
+  margin-right: 15px;
+}
+
+.l-right-large {
+  margin-right: 20px;
 }
 
 .l-parallel > * { /*横並び*/
@@ -79,7 +107,18 @@
   float: left;
   box-sizing: border-box;
 
-  &:last-child {
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.l-quarter > * {
+  width: 23%;
+  margin-right: 2%;
+  float: left;
+  box-sizing: border-box;
+
+  &:nth-child(4n) {
     margin-right: 0;
   }
 }

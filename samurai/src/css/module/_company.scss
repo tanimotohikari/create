@@ -1,0 +1,31 @@
+.company {
+  border: 1px solid #ddd;
+  text-align: center;
+
+  tr:nth-child(2n) {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+
+  th,td {
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    padding: 20px;
+  }
+
+  th {
+    width: 25%;
+    color: #e88402;
+  }
+
+  .company-title {
+
+    & > * {
+      display: block;
+    }
+  }
+}
+
+.company-stats {
+  padding: 20px;
+}

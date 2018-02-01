@@ -4,6 +4,10 @@
   -webkit-border-radius: 3px;
   -ms-border-radius: 3px;
 
+  &.card-foundation {
+    background-color: #f3f3f3;
+  }
+
   .card-anchor {
     text-decoration: none;
 
@@ -20,5 +24,33 @@
         border-bottom: 1px dotted #ddd;
       }
     }
+  }
+
+  .card-thumbnail {
+    padding: 15px;
+
+    .card-thumbnail-inner {
+      display: table;
+      text-decoration: none !important;
+
+      & > * {
+        display: table-cell;
+        vertical-align: middle;
+
+        &:last-child {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .card-balloon {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0 10px 15px; 
   }
 }
